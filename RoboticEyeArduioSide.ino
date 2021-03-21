@@ -102,8 +102,14 @@ void loop()
     undilate(); 
    } 
    if (incomeByte==49) { 
-    dilate();    
+    dilate();  }  
 
+if(Serial.available()<0)
+  { 
+   incomeByte = Serial.read();
+   if (incomeByte==0) 
+   {
+    lightmode(); }
    
   }
 
