@@ -21,10 +21,11 @@ Servo myservo;  // create servo object to control a servo
 byte incomeByte; 
 int pos = 0;    // variable to store the servo position 
 int postarg=0;
+int pulseRate;
 int button = (A5);
 int sensorValue = analogRead(A5);
-void undilate();
-void dilate();
+void positiveemo();
+void negativeemo();
 void lightmode();
 
  
@@ -51,10 +52,10 @@ void setup()
    } 
    if (incomeByte==48 || incomeByte==82) 
    {
-    undilate(); 
+    positiveemo(); 
    } 
    if (incomeByte==49 || incomeByte==76) { 
-    dilate();    
+    negativeemo();    
   }
 }
 }
@@ -72,37 +73,62 @@ void lightmode () {
   delay(1); 
 }
 
-void undilate() 
+void positiveemo() 
 {
-    for(pos = 90; pos>=0; pos-=1)     // goes from 180 degrees to 0 degrees 
+    int pulseRate=random(20-24);
+   int pos=random(50-55);  // random from (20-24) degrees to random (50-55) for pulsation sweep, random 10-20 pupil dilation frequency. 
+   if(pulseRate>19){
+   if(pos>10){
+  int velocity=25+random(60);
+   int pos=20+random(60);
+   pos <= random(33,37); // random 33-37ms for the servo to reach the position for a smooth transition
+   myservo.write(pos); // tell servo to go to position in variable 'pos'
+   delay(rand);
+  
+   { 
+     
+
   {                                
    myservo.write(20);              // tell servo to go to position in variable 'pos' 
     //delay(15);                       // waits 15ms for the servo to reach the position 
   } 
-}
+   }
+     
+   }   }   }
 
-void dilate()
+   void negativeemo()
+
 {
-    for(pos = 0; pos <= 90; pos += 1) // goes from 0 degrees to 180 degrees 
-  {                                  // in steps of 1 degree 
-   myservo.write(90);              // tell servo to go to position in variable 'pos' 
-   //delay(15);                       // waits 15ms for the servo to reach the position 
-  } 
-}
+    int pulseRate=random(55-77);
+   int pos=random(50-55);  // random from (55-77) degrees to random (50-55) for pulsation greater than 19, pupil dilation frequency 20 degrees plus random 60. 
+   if(pulseRate>19){
+   if(pos>10){
+  int velocity=25+random(60);
+   int pos=20+random(60);
+   pos <= random(17,20); // random 17-20ms for the servo to reach the position for a smooth transition
+   myservo.write(pos); // tell servo to go to position in variable 'pos'
+   delay(rand);
+  
+  {                                
+   myservo.write(20);              // tell servo to go to position in variable 'pos' 
+    //delay(15);                       // waits 15ms for the servo to reach the position 
+  } }}}
 
+  
 void loop() 
+    
 { 
   if(Serial.available()>0)
-  { 
+  {
    incomeByte = Serial.read();
    Serial.print(incomeByte);
    Serial.print("\n");
    if (incomeByte==48) 
    {
-    undilate(); 
+    positiveemo(); 
    } 
    if (incomeByte==49) { 
-    dilate();  }  
+    negativeemo();  }  
 
 if(Serial.available()<0)
   { 
@@ -111,7 +137,5 @@ if(Serial.available()<0)
    {
     lightmode(); }
    
-  }
-
-} 
-}
+  }}}
+  
