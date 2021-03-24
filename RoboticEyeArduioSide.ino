@@ -1,7 +1,7 @@
 /* Sweep
 
  by Dr Carl Strathearn
- Updated to include a photo resistor for light responsivity
+ Updated to include a photo resistor for light responsivity and pupil pulsation frequencies 
  for a robotic eyes system that can respond to light and emotion
  
  by BARRAGAN <http://barraganstudio.com> 
