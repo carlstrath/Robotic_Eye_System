@@ -5,7 +5,9 @@ The following repository contains the code, cad design, STL files and video (App
 Published papers on the robotic eye system
 
 1.https://www.mdpi.com/2227-9709/8/4/64 (2021) - Implementation and testing
+
 2.https://link.springer.com/article/10.1007/s10015-018-0482-6 (2018) - Overview in HRI
+
 3. http://eprints.staffs.ac.uk/3946/ (2017) - Design princples
 
 Run the Arduino side .ino on your Arduino UI
