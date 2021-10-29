@@ -8,7 +8,7 @@ Published papers on the robotic eye system
 
 2.https://link.springer.com/article/10.1007/s10015-018-0482-6 (2018) - Overview in HRI
 
-3. http://eprints.staffs.ac.uk/3946/ (2017) - Design princples
+3.http://eprints.staffs.ac.uk/3946/ (2017) - Design princples
 
 Run the Arduino side .ino on your Arduino UI
 and run the Affdexme Application (OSX) in the XCode UI.
